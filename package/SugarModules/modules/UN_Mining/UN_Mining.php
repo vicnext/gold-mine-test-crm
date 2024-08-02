@@ -163,12 +163,7 @@ class UN_Mining extends Basic
                     $month = 12;
                     $year--;
                 }
-                try {
-                    $dayEnd = cal_days_in_month(CAL_GREGORIAN, $month, $year);
-                } catch(Exception $e) {
-                    $x = $month;
-                    $y = $year;
-                }
+                $dayEnd = cal_days_in_month(CAL_GREGORIAN, $month, $year);
             }
         }
     }

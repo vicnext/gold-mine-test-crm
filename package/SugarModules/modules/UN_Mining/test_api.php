@@ -7,7 +7,7 @@ function restRequest($method, $arguments){
  //global $url;
         
  
-$url = "http://suite7143.lc/service/v4_1/rest.php";
+$url = "http://suite7143.lc/custom/service/v4_1_custom/rest.php";
         
  $curl = curl_init($url);
  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -90,10 +90,25 @@ $entryArgs = array(
 
 
 
+$entryArgs = array(
+    'session' => $sessId,
+    'year' => 2024,
+    'month' => 5,
+ );
+
+
+$entryArgs = array(
+    'session' => $sessId,
+ );
 
  //$result = restRequest('get_entry_list',$entryArgs);
-  $result = restRequest('set_entry', $entryArgs);
+  //$result = restRequest('set_entry', $entryArgs);
+//$result = restRequest('get_available_modules', $entryArgs);
 
+  //$result = restRequest('get_report', $entryArgs);
+  $result = restRequest('generate_test_data', $entryArgs);
+  
+  
 echo '<pre>';
 print_r($result);
 echo '</pre>';

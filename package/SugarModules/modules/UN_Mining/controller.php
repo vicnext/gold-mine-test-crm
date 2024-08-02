@@ -18,7 +18,7 @@ class UN_MiningController extends SugarController
             'data' => $countries,
             'tpl' => 'modules/UN_Mining/tpls/countries.tpl',
         ];
-        $view = \ViewFactory::loadView('ajax', $this->bean->module_dir, $this->bean, $viewData);
+        $view = ViewFactory::loadView('ajax', $this->bean->module_dir, $this->bean, $viewData);
 
         $this->jsonResponse($view->display());
     }
@@ -36,9 +36,19 @@ class UN_MiningController extends SugarController
             'data' => $companies,
             'tpl' => 'modules/UN_Mining/tpls/companies.tpl',
         ];
-        $view = \ViewFactory::loadView('ajax', $this->bean->module_dir, $this->bean, $viewData);
+        $view = ViewFactory::loadView('ajax', $this->bean->module_dir, $this->bean, $viewData);
 
         $this->jsonResponse($view->display());
+    }
+
+    /**
+     * Get Companies View of Exceeded Countries
+     *
+     */
+    public function action_generate()
+    {
+        $bean = BeanFactory::newBean('UN_Mining');
+        $bean->generate();
     }
 
     /**
