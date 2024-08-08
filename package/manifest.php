@@ -61,9 +61,9 @@ $manifest = array (
   'icon' => '',
   'is_uninstallable' => true,
   'name' => 'GoldMining',
-  'published_date' => '2024-07-29 14:26:19',
+  'published_date' => '2024-08-08 11:00:00',
   'type' => 'module',
-  'version' => 'v0.2',
+  'version' => 'v0.3',
   'remove_tables' => 'prompt',
 );
 
